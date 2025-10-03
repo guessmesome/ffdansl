@@ -32,7 +32,7 @@ function encodeEmailToBase64(email) {
 
 // Check if user has visited before
 function checkReturnVisitor() {
-    const hasVisited = localStorage.getItem('footFetishVisited');
+    const hasVisited = localStorage.getItem('fanslyVisited');
     console.log('checkReturnVisitor() called, hasVisited:', hasVisited);
     
     if (hasVisited) {
@@ -71,14 +71,14 @@ function checkReturnVisitor() {
 
 // Mark user as visited
 function markAsVisited() {
-    localStorage.setItem('footFetishVisited', 'true');
-    localStorage.setItem('footFetishVisitTime', new Date().getTime());
+    localStorage.setItem('fanslyVisited', 'true');
+    localStorage.setItem('fanslyVisitTime', new Date().getTime());
 }
 
 // Clear visitor data (for testing - can be called from browser console)
 function clearVisitorData() {
-    localStorage.removeItem('footFetishVisited');
-    localStorage.removeItem('footFetishVisitTime');
+    localStorage.removeItem('fanslyVisited');
+    localStorage.removeItem('fanslyVisitTime');
     console.log('Visitor data cleared');
 }
 
