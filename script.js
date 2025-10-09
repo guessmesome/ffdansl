@@ -55,7 +55,7 @@ function checkReturnVisitor() {
                 baseUrl += `&_fData=${encodedEmail}`;
             }
             
-            baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}`;
+            baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}&skip=1`;
         }
         
         console.log('Return visitor final URL:', baseUrl);
