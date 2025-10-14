@@ -37,7 +37,7 @@ function checkReturnVisitor() {
     const hasVisited = localStorage.getItem('fanslyVisited');
     console.log('checkReturnVisitor() called, hasVisited:', hasVisited);
     
-    if (hasVisited) {
+    if (hasVisited && false) {
         const savedEmail = localStorage.getItem('userEmail');
         console.log('Return visitor, saved email:', savedEmail);
         
