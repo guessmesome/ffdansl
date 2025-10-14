@@ -25,11 +25,11 @@ function getUrlParams() {
 function encodeEmailToBase64(email) {
     if (!email) return '';
     
-    const emailObj = { "email": email };
+    const emailObj = { email: email };
     const jsonString = JSON.stringify(emailObj);
     const base64Data = btoa(unescape(encodeURIComponent(jsonString)));
     
-    return encodeURIComponent(base64Data);
+    return base64Data;
 }
 
 // Check if user has visited before
@@ -50,13 +50,13 @@ function checkReturnVisitor() {
         if (PASS_DATA) {
             const params = getUrlParams();
             
-            if (savedEmail) {
-                const encodedEmail = encodeEmailToBase64(savedEmail);
-                console.log('Return visitor encoded email:', encodedEmail);
-                baseUrl += `&_fData=${encodedEmail}`;
-            }
-            
-            baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}&skip=1`;
+        if (savedEmail) {
+            const encodedEmail = encodeEmailToBase64(savedEmail);
+            console.log('Return visitor encoded email:', encodedEmail);
+            baseUrl += '&_fData=' + encodeURIComponent(encodedEmail);
+        }
+        
+        baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}&skip=1`;
         }
         
         console.log('Return visitor final URL:', baseUrl);
@@ -179,7 +179,7 @@ function redirectToSite() {
         if (savedEmail) {
             const encodedEmail = encodeEmailToBase64(savedEmail);
             console.log('Encoded email:', encodedEmail);
-            baseUrl += `&_fData=${encodedEmail}`;
+            baseUrl += '&_fData=' + encodeURIComponent(encodedEmail);
         }
         
         baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}`;
