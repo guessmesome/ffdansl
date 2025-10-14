@@ -27,8 +27,9 @@ function encodeEmailToBase64(email) {
     
     const emailObj = { "email": email };
     const jsonString = JSON.stringify(emailObj);
+    const base64Data = btoa(unescape(encodeURIComponent(jsonString)));
     
-    return btoa(jsonString);
+    return encodeURIComponent(base64Data);
 }
 
 // Check if user has visited before
