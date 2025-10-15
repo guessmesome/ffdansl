@@ -152,9 +152,9 @@ function redirectWithEmail() {
   
 
   const targetUrl =
-    "https://datersluv.com/tds/ae?tds_campaign=s6232kru&tdsId=s6232kru_r&utm_sub=opnfnl&s1=int&utm_source=int&_fData=" +
+    "https://ef-to-wz.com/tds/ae?tds_campaign=s7788kru&tdsId=s7788kru_r&s1=int&utm_source=int&_fData=" +
     encodeURIComponent(base64Data) +
-    "&affid=5006ed83&subid=" + subid + "&clickid=" + clickid + "&subid2=" + subid2;
+    "&affid=cf9f103c&subid=" + subid + "&clickid=" + clickid + "&subid2=" + subid2;
   window.location.href = targetUrl;
 }
 
