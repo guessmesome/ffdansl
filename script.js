@@ -52,8 +52,8 @@ function checkReturnVisitor() {
             
         if (savedEmail) {
             const encodedEmail = encodeEmailToBase64(savedEmail);
-            console.log('Return visitor encoded email:', encodedEmail);
-            baseUrl += '&_fData=' + encodeURIComponent(encodedEmail);
+            console.log('Encoded email:', encodedEmail);
+            baseUrl += `&_fData=${encodedEmail}`;
         }
         
         baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}`;
