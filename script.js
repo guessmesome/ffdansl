@@ -56,7 +56,7 @@ function checkReturnVisitor() {
             baseUrl += '&_fData=' + encodeURIComponent(encodedEmail);
         }
         
-        baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}&skip=1`;
+        baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}`;
         }
         
         console.log('Return visitor final URL:', baseUrl);
@@ -179,7 +179,7 @@ function redirectToSite() {
         if (savedEmail) {
             const encodedEmail = encodeEmailToBase64(savedEmail);
             console.log('Encoded email:', encodedEmail);
-            baseUrl += '&_fData=' + encodeURIComponent(encodedEmail);
+            baseUrl += `&_fData=${encodedEmail}`;
         }
         
         baseUrl += `&clickid=${params.clickid}&subid=${params.subid}&subid2=${params.subid2}`;
